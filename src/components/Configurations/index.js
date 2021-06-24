@@ -1,6 +1,21 @@
 import React from "react";
-import { MDBRow, MDBCol, MDBCard, MDBAvatar, MDBCardBody, MDBIcon, MDBContainer, MDBBtn } from "mdbreact";
+import { MDBRow, MDBCol, MDBCard, MDBAvatar, MDBCardBody, MDBIcon, MDBContainer, MDBBtn, MDBInput } from "mdbreact";
 
+import {
+    MDBModal,
+    MDBModalDialog,
+    MDBModalContent,
+    MDBModalHeader,
+    MDBModalTitle,
+    MDBModalBody,
+    MDBModalFooter,
+  } from 'mdb-react-ui-kit';
+
+
+  import FormPage from '../Form';
+
+
+import { useState, useEffect } from 'react';
 import soloPiano from '../../assets/solopiano.jpg';
 import pianoDuo from '../../assets/pianoduo.jpg';
 import pianoquintet from '../../assets/pianoquartet.JPG';
@@ -13,6 +28,13 @@ import totalpackage from '../../assets/totalpackage.JPG';
 
 
 const ConfigurationPage = () => {
+
+    const [centredModal, setCentredModal] = useState(false);
+
+    const toggleShow = () => setCentredModal(!centredModal);
+  
+
+
     return (
         <MDBContainer id="wedding-offerings">
             <MDBCard className="my-5 px-5 pb-1 text-center">
@@ -51,7 +73,7 @@ const ConfigurationPage = () => {
                                 <p>Check Availibility</p>
                                 <div className="d-flex flex-row justify-content-center">
                                 
-                                    <MDBBtn tag="a" size="lg" floating gradient="dusty-grass">
+                                    <MDBBtn onClick={toggleShow} tag="a" size="lg" floating gradient="dusty-grass">
                                         <MDBIcon icon="calendar-check" />
                                     </MDBBtn>
                                    
@@ -85,7 +107,7 @@ const ConfigurationPage = () => {
                                 <p>Check Availibility</p>
                                 <div className="d-flex flex-row justify-content-center">
                                 
-                                    <MDBBtn tag="a" size="lg" floating gradient="dusty-grass">
+                                    <MDBBtn onClick={toggleShow} tag="a" size="lg" floating gradient="dusty-grass">
                                         <MDBIcon icon="calendar-check" />
                                     </MDBBtn>
                                    
@@ -119,7 +141,7 @@ const ConfigurationPage = () => {
                                 <p>Check Availibility</p>
                                 <div className="d-flex flex-row justify-content-center">
                                 
-                                    <MDBBtn tag="a" size="lg" floating gradient="dusty-grass">
+                                    <MDBBtn onClick={toggleShow} tag="a" size="lg" floating gradient="dusty-grass">
                                         <MDBIcon icon="calendar-check" />
                                     </MDBBtn>
                                    
@@ -151,7 +173,7 @@ const ConfigurationPage = () => {
                                 <p>Check Availibility</p>
                                 <div className="d-flex flex-row justify-content-center">
                                 
-                                    <MDBBtn tag="a" size="lg" floating gradient="dusty-grass">
+                                    <MDBBtn onClick={toggleShow} tag="a" size="lg" floating gradient="dusty-grass">
                                         <MDBIcon icon="calendar-check" />
                                     </MDBBtn>
                                    
@@ -185,7 +207,7 @@ const ConfigurationPage = () => {
                                 <p>Check Availibility</p>
                                 <div className="d-flex flex-row justify-content-center">
                                 
-                                    <MDBBtn tag="a" size="lg" floating gradient="dusty-grass">
+                                    <MDBBtn onClick={toggleShow} tag="a" size="lg" floating gradient="dusty-grass">
                                         <MDBIcon icon="calendar-check" />
                                     </MDBBtn>
                                    
@@ -217,7 +239,7 @@ const ConfigurationPage = () => {
                                 <p>Check Availibility</p>
                                 <div className="d-flex flex-row justify-content-center">
                                 
-                                    <MDBBtn tag="a" size="lg" floating gradient="dusty-grass">
+                                    <MDBBtn onClick={toggleShow} tag="a" size="lg" floating gradient="dusty-grass">
                                         <MDBIcon icon="calendar-check" />
                                     </MDBBtn>
                                    
@@ -270,7 +292,7 @@ const ConfigurationPage = () => {
                                 <p>Check Availibility</p>
                                 <div className="d-flex flex-row justify-content-center">
                                 
-                                    <MDBBtn tag="a" size="lg" floating gradient="dusty-grass">
+                                    <MDBBtn onClick={toggleShow} tag="a" size="lg" floating gradient="dusty-grass">
                                         <MDBIcon icon="calendar-check" />
                                     </MDBBtn>
                                    
@@ -285,6 +307,51 @@ const ConfigurationPage = () => {
                     </MDBRow>
                 </MDBCardBody>
             </MDBCard>
+
+              {/* MODAL */}
+
+            <MDBModal tabIndex='-1' show={centredModal} getOpenState={(e: any) => setCentredModal(e)}>
+                  <MDBModalDialog size='lg'>
+          <MDBModalContent>
+            <MDBModalHeader>
+              <MDBModalTitle className="text-dark">Submit Request</MDBModalTitle>
+              <MDBBtn
+                type='button'
+                className='btn-close'
+                color='none'
+                onClick={toggleShow}
+              ></MDBBtn>
+            </MDBModalHeader>
+            <MDBModalBody fluid >
+          
+            <FormPage />
+
+            </MDBModalBody>
+            <MDBModalFooter>
+              <MDBBtn color='secondary' onClick={toggleShow}>
+                Close
+              </MDBBtn>
+              
+            </MDBModalFooter>
+          </MDBModalContent>
+        </MDBModalDialog>
+
+
+      </MDBModal>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </MDBContainer>
     );
 }

@@ -21,6 +21,7 @@ import { MDBBtn,
 import NavBar from "../Navbar";
 import FormPage from '../Form';
 
+
 const Header = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const imageUrl = windowWidth >= 500 ? desktopImage : mobileImage;
@@ -95,6 +96,8 @@ const Header = () => {
             </MDBModalFooter>
           </MDBModalContent>
         </MDBModalDialog>
+
+
       </MDBModal>
 
 

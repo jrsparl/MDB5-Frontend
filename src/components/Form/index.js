@@ -5,7 +5,7 @@ import { MDBDatePickerV5 } from 'mdbreact';
 
 
 const FormPage = () => {
- 
+  
 
 return (
 <MDBContainer fluid>
@@ -21,7 +21,7 @@ return (
           <MDBInput containerClass='d-flex flex-row' label="Request Details" icon="list-alt" group type="textarea" rows="5" />
         </div>
         <div className="text-center">
-          <MDBBtn color="primary">Register</MDBBtn>
+          <MDBBtn color="primary">Submit</MDBBtn>
         </div>
       </form>
     </MDBCol>
