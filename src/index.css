@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+
+/* font-family: 'Pacifico', cursive; */
+
+body {
+  margin: 0;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+ /* Default height for small devices */
+ #intro-example {
+  height: 400px;
+}
+
+.nav-font{
+  font-size: large;
+}
+
+/* Height for devices larger than 992px */
+@media (min-width: 992px) {
+  #intro-example {
+    height: 600px;
+  }
+  .nav-font {
+    font-size: xx-large;
+  }
+}
+
+
+.band-tite{
+  font-family: 'Pacifico', cursive;
+}
